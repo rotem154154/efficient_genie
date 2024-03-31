@@ -1,3 +1,4 @@
+
 # efficient_genie
 ![Efficient Genie Demo](https://github.com/rotem154154/efficient_genie/blob/main/Untitled2.gif?raw=true)
 
@@ -9,6 +10,11 @@ I developed a significantly smaller world model inspired by Google's **[Genie](h
 
 **Dynamics Model**: Mirroring the structure of Genie's dynamics model, my version employs a decoder-only **[Transformer](https://github.com/lucidrains/x-transformers)**. This transformer accepts 16 individually encoded frames and their associated actions as input, subsequently predicting the next latent w. This prediction facilitates the generation of the upcoming frame by the decoder.
 
+### 
+![genie training](https://github.com/rotem154154/efficient_genie/blob/main/genie%20training.png?raw=true)
+
 ----------
 
 While this approach yields excellent results for the first generated frame, subsequent frames—conditioned on these generated frames—do not perfectly match the distribution of the original frames. This discrepancy leads to progressively poorer generations, as each one serves as the input for future frames. To address this issue, I adjusted the training process of the StyleGAN inversion to use generated images as inputs instead of the original video frames. Additionally, I introduced a new component to the loss function: minimizing the cosine similarity between the encoded generated frame and the target frame. This adjustment helps align the distribution of the generated frames more closely with that of the original frames, improving the coherence and quality of sequential frame generation.
+
+![Inversion](https://github.com/rotem154154/efficient_genie/blob/main/inversion.png?raw=true)
