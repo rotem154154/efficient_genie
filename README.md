@@ -1,4 +1,4 @@
-
+[![Website](https://img.shields.io/badge/Website-Visit%20Site-blue)](https://rotem154154.github.io/)
 # efficient_genie
 ![Efficient Genie Demo](https://github.com/rotem154154/efficient_genie/blob/main/Untitled2.gif?raw=true)
 
